@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTube</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ADD8E6, #FFFFFF, #ADD8E6); /* Gradiente de fundo */
+            padding: 20px;
+            text-align: center; /* Centraliza os elementos na página */
+            margin: 0;
+            min-height: 100vh; /* Assegura que o conteúdo preencha a tela inteira */
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #FFFFFF; /* Cor branca para o texto */
+            background: linear-gradient(to right, #808080, #333333, #000000); /* Gradiente de cinza para preto */
+            padding: 20px 40px; /* Preenchimento ao redor do texto */
+            border-radius: 20px; /* Bordas arredondadas para o fundo */
+            display: inline-block; /* Permite o uso de preenchimento e borda arredondada */
+            margin-bottom: 20px; /* Espaçamento entre o h1 e o conteúdo abaixo */
+            font-size: 2.5em; /* Tamanho da fonte maior para o título principal */
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 15px; /* Espaçamento acima do vídeo */
+        }
+
+        .video-wrapper {
+    display: inline-block; /* Centraliza o vídeo */
+    max-width: 100%; /* Garante responsividade */
+    margin-bottom: 80px; /* Aumenta a distância entre um vídeo e outro */
+}
+
+        iframe {
+    width: 960px; /* Aumentando significativamente a largura do vídeo */
+    height: 540px; /* Aumentando significativamente a altura do vídeo */
+    max-width: 100%; /* Garante responsividade em telas menores */
+    border-radius: 10px; /* Mantém as bordas arredondadas */
+}
+
+
+        footer {
+            text-align: center; /* Centraliza o texto no rodapé */
+            margin-top: 20px; /* Espaçamento acima do rodapé */
+            padding: 10px 0; /* Preenchimento no topo e na base do rodapé */
+            background: transparent; /* Fundo transparente para o rodapé */
+            color: #333; /* Cor do texto do rodapé */
+            width: 100%;
+        }
+
+        /* Estilos para dispositivos com telas menores */
+        @media (max-width: 576px) {
+            iframe {
+                width: 100%; /* O vídeo ocupa a largura total em telas pequenas */
+                height: auto; /* Ajusta a altura automaticamente */
+            }
+
+            body, h1, h2 {
+                padding: 10px; /* Reduz o espaçamento em dispositivos menores */
+            }
+
+            .video-wrapper {
+                margin-top: 10px; /* Reduz o espaçamento acima do vídeo */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>TechTube</h1>
+    <h2>Rede 6G</h2>
+    <div class="video-wrapper">
+        <!-- Substitua 'YOUR_VIDEO_ID' pelo ID real do vídeo que deseja incorporar -->
+        <iframe src="https://www.youtube.com/embed/llENE3aGmMM?si=vi7EWHR_oxmNqI4s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <h2>Os 7 Estágios da IA</h2>
+    <div class="video-wrapper">
+        <!-- Substitua 'YOUR_VIDEO_ID' pelo ID real do vídeo que deseja incorporar -->
+        <iframe src="https://www.youtube.com/embed/YyrfClg9V3c?si=QnaTo1hZ16s07Fgh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <h2>Wi-Fi 7</h2>
+    <div class="video-wrapper">
+        <!-- Substitua 'YOUR_VIDEO_ID' pelo ID real do vídeo que deseja incorporar -->
+        <iframe src="https://www.youtube.com/embed/k_fsEJbMk6Y?si=jVABaS2WEzI0PnLZ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <h2>Computação Quântica</h2>
+    <div class="video-wrapper">
+        <!-- Substitua 'YOUR_VIDEO_ID' pelo ID real do vídeo que deseja incorporar -->
+        <iframe src="https://www.youtube.com/embed/yLvetNt6StY?si=FIDVxT3z3Kv_YUud" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <!-- Rodapé com fundo transparente -->
+    <footer>
+        &copy; 2024
+    </footer>
+
+</body>
+</html>
