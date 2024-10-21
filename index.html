@@ -105,6 +105,15 @@
             .video-wrapper {
                 margin-top: 20px;
             }
+
+            .page-numbers span {
+                display: none;
+            }
+
+            .page-numbers span.active,
+            .page-numbers span.show {
+                display: inline-block;
+            }
         }
     </style>
 </head>
@@ -178,12 +187,32 @@
             const pageNumbersContainer = document.getElementById('page-numbers');
             pageNumbersContainer.innerHTML = '';
 
-            for (let i = 1; i <= totalPages; i++) {
+            let startPage = currentPage;
+            let endPage = currentPage;
+
+            if (window.innerWidth <= 576) {
+                // Para telas menores, mostrar apenas 2 números
+                if (currentPage === 1) {
+                    endPage = 2;
+                } else if (currentPage === totalPages) {
+                    startPage = totalPages - 1;
+                } else {
+                    startPage = currentPage - 1;
+                    endPage = currentPage;
+                }
+            } else {
+                // Para telas maiores, mostrar todas as páginas
+                startPage = 1;
+                endPage = totalPages;
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
                 const pageNumberElement = document.createElement('span');
                 pageNumberElement.innerText = i;
                 if (i === currentPage) {
                     pageNumberElement.classList.add('active');
                 }
+                pageNumberElement.classList.add('show'); // Adiciona a classe para telas menores
                 pageNumberElement.onclick = () => goToPage(i);
                 pageNumbersContainer.appendChild(pageNumberElement);
             }
@@ -214,6 +243,11 @@
 
         // Inicializa com a primeira página
         renderVideos(currentPage);
+
+        // Redesenha as páginas ao redimensionar a tela
+        window.onresize = () => {
+            renderPageNumbers();
+        };
     </script>
 </body>
 </html>
